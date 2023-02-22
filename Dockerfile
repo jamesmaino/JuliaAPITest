@@ -1,4 +1,4 @@
-FROM julia:1.8.5-bullseye
+FROM julia:1.8.5
 
 
 WORKDIR /home
