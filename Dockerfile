@@ -1,4 +1,4 @@
-FROM julia:1.8.5
+FROM --platform=linux/amd64 julia:1.8.5
 
 
 WORKDIR /home
@@ -6,9 +6,18 @@ WORKDIR /home
 ENV VERSION 1
 ADD . /home
 
-ENV PORT 8080
-ENV HOST 0.0.0.0
+# ports
+EXPOSE 8000
+EXPOSE 80
 
-EXPOSE 8080
+# set up app environment
+ENV PORT "8080"
+ENV WSPORT "8080"
+ENV EARLYBIND "true"
 
-ENTRYPOINT ["julia", "run_oxygen.jl"]
+# instantiate Julia packages
+RUN julia -e "using Pkg; Pkg.activate(\".\"); Pkg.instantiate(); Pkg.precompile(); "
+
+
+
+CMD julia -e 'using Pkg; Pkg.activate("."); include("run_oxygen.jl"); '
