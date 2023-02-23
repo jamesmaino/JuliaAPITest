@@ -1,5 +1,6 @@
 FROM --platform=linux/amd64 julia:1.8.5
 
+RUN apt-get update && apt-get install -y g++
 
 WORKDIR /home
 
@@ -15,9 +16,5 @@ ENV PORT "8080"
 ENV WSPORT "8080"
 ENV EARLYBIND "true"
 
-# instantiate Julia packages
-RUN julia -e "using Pkg; Pkg.activate(\".\"); Pkg.instantiate(); Pkg.precompile(); "
 
-
-
-CMD julia -e 'using Pkg; Pkg.activate("."); include("run_oxygen.jl"); '
+CMD julia -Jcompiled.so -e 'include("runoxygen.jl"); run()'

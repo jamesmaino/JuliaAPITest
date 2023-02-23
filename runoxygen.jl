@@ -1,6 +1,5 @@
 using Pkg
 Pkg.activate(".")
-Pkg.instantiate()
 
 using Oxygen
 using HTTP
@@ -10,4 +9,6 @@ using HTTP
 end
 
 # start the web server
-serve(; host="0.0.0.0", port=8080)
+function run()
+    serve(; host="0.0.0.0", port=8080)
+end
