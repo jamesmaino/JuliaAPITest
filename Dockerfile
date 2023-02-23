@@ -1,6 +1,6 @@
 FROM --platform=linux/amd64 julia:1.8.5
 
-RUN apt-get update && apt-get install -y g++
+# RUN apt-get update && apt-get install -y g++
 
 WORKDIR /home
 
