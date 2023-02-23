@@ -1,14 +1,14 @@
 FROM --platform=linux/amd64 julia:latest
-RUN apt-get update 
+# RUN apt-get update 
 # only works with more RAM (8GB tested)
-RUN apt-get install -y g++
+# RUN apt-get install -y gcc
 
 WORKDIR /home
 
 ENV VERSION 1
 ADD . /home
 
-RUN julia deploy/packagecompile.jl
+# RUN julia deploy/packagecompile.jl
 
 # ports
 EXPOSE 8000
@@ -20,5 +20,5 @@ ENV WSPORT "8080"
 ENV EARLYBIND "true"
 
 
-CMD julia -Jcompiled.so -e 'include("runoxygen.jl"); run()'
-# CMD julia -e 'include("runoxygen.jl"); run()'
+# CMD julia -Jcompiled.so -e 'include("runoxygen.jl"); run()'
+CMD julia -e 'include("runoxygen.jl"); run()'
