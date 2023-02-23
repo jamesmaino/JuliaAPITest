@@ -1,5 +1,4 @@
-FROM --platform=linux/amd64 julia:1.8.5
-
+FROM --platform=linux/amd64 julia:latest
 RUN apt-get update 
 RUN apt-get install -y gcc
 
