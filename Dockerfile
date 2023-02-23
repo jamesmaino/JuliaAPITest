@@ -7,6 +7,8 @@ WORKDIR /home
 ENV VERSION 1
 ADD . /home
 
+RUN julia deploy/packagecompile.jl
+
 # ports
 EXPOSE 8000
 EXPOSE 80
