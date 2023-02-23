@@ -1,6 +1,6 @@
 FROM --platform=linux/amd64 julia:latest
 RUN apt-get update 
-# probably a RAM issue
+# only works with more RAM (8GB tested)
 RUN apt-get install -y gcc
 
 WORKDIR /home
@@ -21,4 +21,4 @@ ENV EARLYBIND "true"
 
 
 CMD julia -Jcompiled.so -e 'include("runoxygen.jl"); run()'
-# CMD julia runoxygen.jl
+# CMD julia -e 'include("runoxygen.jl"); run()'
