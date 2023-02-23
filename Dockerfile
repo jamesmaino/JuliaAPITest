@@ -20,4 +20,4 @@ ENV EARLYBIND "true"
 
 
 # CMD julia -Jcompiled.so -e 'include("runoxygen.jl"); run()'
-CMD julia -e 'include("runoxygen.jl"); run()'
+CMD julia runoxygen.jl

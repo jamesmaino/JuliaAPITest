@@ -10,6 +10,4 @@ using HTTP
 end
 
 # start the web server
-function run()
-    serve(; host="0.0.0.0", port=8080)
-end
+serve(; host="0.0.0.0", port=8080)
