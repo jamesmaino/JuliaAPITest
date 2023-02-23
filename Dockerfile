@@ -1,6 +1,7 @@
 FROM --platform=linux/amd64 julia:1.8.5
 
-RUN apt-get update && apt-get install -y gcc
+RUN apt-get update 
+RUN apt-get install -y gcc
 
 WORKDIR /home
 
