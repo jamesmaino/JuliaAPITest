@@ -1,7 +1,7 @@
 FROM --platform=linux/amd64 julia:latest
 RUN apt-get update 
 # only works with more RAM (8GB tested)
-RUN apt-get install -y gcc
+RUN apt-get install -y g++
 
 WORKDIR /home
 
