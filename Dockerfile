@@ -1,6 +1,7 @@
 FROM --platform=linux/amd64 julia:latest
 RUN apt-get update 
-# RUN apt-get install -y gcc
+# probably a RAM issue
+RUN apt-get install -y gcc
 
 WORKDIR /home
 
