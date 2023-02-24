@@ -10,6 +10,9 @@ ADD . /home
 
 # RUN julia deploy/packagecompile.jl
 
+# 
+RUN julia -e 'include("runoxygen.jl"); @async run(;host=8081)'
+
 # ports
 EXPOSE 8000
 EXPOSE 80

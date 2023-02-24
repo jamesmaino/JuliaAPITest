@@ -5,11 +5,10 @@ Pkg.instantiate()
 using Oxygen
 using HTTP
 
-@get "/data" function (req::HTTP.Request)
-    return Dict("message" => "hello!", "value" => 99.3)
-end
-
 # start the web server
-function run()
-    serve(; host="0.0.0.0", port=8080)
+function run(; host="0.0.0.0", port=8080)
+    @get "/data" function (req::HTTP.Request)
+        return Dict("message" => "hello!", "value" => 99.3)
+    end
+    serve(; host=host, port=port)
 end
