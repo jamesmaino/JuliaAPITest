@@ -1,20 +1,21 @@
-FROM --platform=linux/amd64 julia:latest
+# Heavily inspired by Genie.jl Docker template
+FROM --platform=linux/amd64 julia:1.9.0-beta4
 # RUN apt-get update 
 # only works with more RAM (8GB tested)
 # RUN apt-get install -y gcc
 
 # create dedicated user
-# RUN useradd --create-home --shell /bin/bash genie
+RUN useradd --create-home --shell /bin/bash genie
 
 # set up the app
 ADD . /home
 WORKDIR /home
 
-# # configure permissions
-# RUN chown -R genie:genie /home/
+# configure permissions
+RUN chown -R genie:genie /home/
 
-# # switch user
-# USER genie
+# switch user
+USER genie
 
 
 # RUN julia deploy/packagecompile.jl
