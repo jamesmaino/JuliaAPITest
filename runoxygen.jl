@@ -1,8 +1,8 @@
 # Write your package code here.
 using Pkg
 Pkg.activate(".")
-Pkg.instantiate()
+# Pkg.instantiate()
 
 using JuliaAPI
 
-JuliaAPI.run()
+JuliaAPI.run(; port=8080)
