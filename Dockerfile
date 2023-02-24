@@ -9,7 +9,7 @@ ENV VERSION 1
 ADD . /home
 
 # RUN julia deploy/packagecompile.jl
-
+RUN julia addPackage.jl
 RUN julia runtests.jl
 
 # ports
