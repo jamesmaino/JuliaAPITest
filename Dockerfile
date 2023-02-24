@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 julia:latest
+FROM --platform=linux/amd64 julia:1.8.5
 # RUN apt-get update 
 # only works with more RAM (8GB tested)
 # RUN apt-get install -y gcc
