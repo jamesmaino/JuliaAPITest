@@ -5,5 +5,6 @@ Pkg.instantiate();
 
 using JuliaAPI
 include("./JuliaAPI/test/runtests.jl")
+Pkg.precompile()
 
 
