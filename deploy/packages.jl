@@ -1,4 +1,0 @@
-const PACKAGES = [
-    "Oxygen",
-    "HTTP"
-]

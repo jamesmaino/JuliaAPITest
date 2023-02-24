@@ -1,5 +1,4 @@
 [deps]
 HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
 JuliaAPI = "33fc0288-4a31-4023-8682-0ccf7d1214ce"
-PackageCompiler = "9b87118b-4619-50d2-8e1e-99f35a4d4d9d"
 Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
