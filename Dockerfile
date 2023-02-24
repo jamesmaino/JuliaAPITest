@@ -10,6 +10,8 @@ ADD . /home
 
 # RUN julia deploy/packagecompile.jl
 
+RUN julia runtests.jl
+
 # ports
 EXPOSE 8000
 EXPOSE 80
@@ -21,4 +23,4 @@ ENV EARLYBIND "true"
 
 
 # CMD julia -Jcompiled.so -e 'include("runoxygen.jl"); run()'
-CMD julia -e 'include("runoxygen.jl"); run()'
+CMD julia runoxygen.jl
