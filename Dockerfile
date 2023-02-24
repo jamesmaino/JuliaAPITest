@@ -4,17 +4,17 @@ FROM --platform=linux/amd64 julia:latest
 # RUN apt-get install -y gcc
 
 # create dedicated user
-RUN useradd --create-home --shell /bin/bash genie
+# RUN useradd --create-home --shell /bin/bash genie
 
 # set up the app
 ADD . /home
 WORKDIR /home
 
-# configure permissions
-RUN chown -R genie:genie /home/
+# # configure permissions
+# RUN chown -R genie:genie /home/
 
-# switch user
-USER genie
+# # switch user
+# USER genie
 
 
 # RUN julia deploy/packagecompile.jl
